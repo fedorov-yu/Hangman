@@ -4,7 +4,7 @@ from src.VISELICA.gameStatus import GameStatus
 game = Game()
 word = game.generate_word()
 
-letters_count = len(word)
+letters_count = len(word) # Count of letters in random word
 print(f'Ugaday slovo sostoin iz {letters_count} bukv')
 
 while game.game_status == GameStatus.IN_PROGRESS:
@@ -13,7 +13,7 @@ while game.game_status == GameStatus.IN_PROGRESS:
 
     print(game.get_current_string())
     print(f'Remaining tries: {game.get_count_tries()}')
-    print(f'your letters: {game.get_my_letters()}')
+    print(f'your letters: {game.get_my_letters()}') # All letters, which player used
     if GameStatus.WIN == game.game_status:
         print('congratulations you WON!')
     elif game.game_status == GameStatus.LOSE:
