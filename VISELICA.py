@@ -17,6 +17,9 @@ class Game:
         self.game_status = GameStatus.NOT_STARTED
 
     def set_letter(self, letter: str):
+        """
+        Get a letter. Check letter in word.
+        """
         if self.count_errors < 0:
             raise InvalidOperationError('Exceeded the max errors number')
 
@@ -37,6 +40,9 @@ class Game:
             self.game_status = GameStatus.LOSE
 
     def generate_word(self) -> str:
+        """
+        Generating random word from file. Now its not working, because file has another path.
+        """
         filename = "../src/data/WordsStockRus.txt"
         with open(filename, encoding="utf-8") as word_file:
             self.random_word = random.choice(word_file.read().split())
